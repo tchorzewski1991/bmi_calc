@@ -7,7 +7,7 @@ BMI calculator app created in Flutter.
 
 #### TODO's
 
-- ... we will see. :) 
+... we will see. :) 
 
 
 #### App preview
