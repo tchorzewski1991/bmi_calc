@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 const Color activeCardColor = Colors.blueGrey;
+const Color bottomContainerColor = Colors.teal;
+const double bottomContainerHeight = 80.0;
 
 class Home extends StatefulWidget {
   @override
@@ -60,6 +62,12 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: bottomContainerHeight,
+              color: bottomContainerColor,
             ),
           ],
         ),
