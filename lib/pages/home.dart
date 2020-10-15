@@ -78,8 +78,9 @@ class _HomeState extends State<Home> {
 
 class ReusableCard extends StatelessWidget {
   final Color color;
+  final Widget child;
 
-  ReusableCard({@required this.color});
+  ReusableCard({@required this.color, this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +90,7 @@ class ReusableCard extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(15.0),
       ),
+      child: child,
     );
   }
 }
