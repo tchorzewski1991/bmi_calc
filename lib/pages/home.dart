@@ -1,8 +1,5 @@
+import 'package:bmi_calc/consts.dart';
 import 'package:flutter/material.dart';
-
-const Color activeCardColor = Colors.blueGrey;
-const Color bottomContainerColor = Colors.teal;
-const double bottomContainerHeight = 80.0;
 
 class Home extends StatefulWidget {
   @override
@@ -25,12 +22,12 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: activeCardColor,
+                      color: reusableCardColorInactive,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: activeCardColor,
+                      color: reusableCardColor,
                     ),
                   ),
                 ],
@@ -41,7 +38,7 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: activeCardColor,
+                      color: reusableCardColor,
                     ),
                   )
                 ],
@@ -52,12 +49,12 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: activeCardColor,
+                      color: reusableCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: activeCardColor,
+                      color: reusableCardColor,
                     ),
                   ),
                 ],
