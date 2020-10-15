@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const Color activeCardColor = Colors.blueGrey;
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -21,12 +23,12 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: Colors.blueGrey,
+                      color: activeCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: Colors.blueGrey,
+                      color: activeCardColor,
                     ),
                   ),
                 ],
@@ -37,7 +39,7 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: Colors.blueGrey,
+                      color: activeCardColor,
                     ),
                   )
                 ],
@@ -48,12 +50,12 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: Colors.blueGrey,
+                      color: activeCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: Colors.blueGrey,
+                      color: activeCardColor,
                     ),
                   ),
                 ],
