@@ -10,7 +10,7 @@ const Color reusableCardColorInactive = Color(0xFF111328);
 const Color reusableCardColorActive = reusableCardColor;
 
 // Colors - BottomContainer
-const Color bottomContainerColor = Colors.teal;
+const Color bottomContainerColor = Color(0xFFEB1555);
 const Color bottomContainerColorInactive = bottomContainerColor;
 const Color bottomContainerColorActive = bottomContainerColor;
 
