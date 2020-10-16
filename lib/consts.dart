@@ -5,8 +5,8 @@ const Color scaffoldBackgroudColor = Color(0xFF0a0d22);
 const Color appBarColor = Color(0xFF0a0d22);
 
 // Colors - ReusableCard
-const Color reusableCardColor = Color(0xFF111428);
-const Color reusableCardColorInactive = reusableCardColor;
+const Color reusableCardColor = Color(0xFF1D1E33);
+const Color reusableCardColorInactive = Color(0xFF111328);
 const Color reusableCardColorActive = reusableCardColor;
 
 // Colors - BottomContainer
