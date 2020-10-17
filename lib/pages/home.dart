@@ -109,7 +109,6 @@ class _HomeState extends State<Home> {
                       color: reusableCardColor,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             'HEIGHT',
@@ -118,12 +117,26 @@ class _HomeState extends State<Home> {
                               fontSize: 20.0,
                             ),
                           ),
-                          Text(
-                            selectedHeight.round().toString(),
-                            style: TextStyle(
-                              fontSize: 50.0,
-                              fontWeight: FontWeight.w900,
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                selectedHeight.round().toString(),
+                                style: TextStyle(
+                                  fontSize: 50.0,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              Text(
+                                'cm',
+                                style: TextStyle(
+                                  color: iconContentTextColor,
+                                  fontSize: 20.0,
+                                ),
+                              )
+                            ],
                           ),
                           Slider(
                             value: selectedHeight,
