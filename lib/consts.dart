@@ -23,7 +23,9 @@ const Color iconContentTextColorActive = iconContentTextColor;
 const Color sliderColor = Color(0xFFEB1555);
 const Color sliderColorActive = sliderColor;
 const Color sliderColorInactive = Color(0xFF8D8E98);
-
+const Color sliderTrackColor = Colors.white;
+const Color sliderThumbColor = sliderColorActive;
+const Color sliderOverlayColor = Color(0x29EB1555);
 // TextStyles
 const TextStyle labelTextStyle = TextStyle(
   color: iconContentTextColor,

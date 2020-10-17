@@ -130,17 +130,29 @@ class _HomeState extends State<Home> {
                               )
                             ],
                           ),
-                          Slider(
-                            value: selectedHeight,
-                            activeColor: sliderColorActive,
-                            inactiveColor: sliderColorInactive,
-                            min: 120.0,
-                            max: 220.0,
-                            onChanged: (double newHeight) {
-                              setState(() {
-                                selectedHeight = newHeight;
-                              });
-                            },
+                          SliderTheme(
+                            data: SliderTheme.of(context).copyWith(
+                              activeTrackColor: sliderTrackColor,
+                              thumbColor: sliderThumbColor,
+                              overlayColor: sliderOverlayColor,
+                              thumbShape: RoundSliderThumbShape(
+                                enabledThumbRadius: 15.0,
+                              ),
+                              overlayShape: RoundSliderOverlayShape(
+                                overlayRadius: 25.0,
+                              ),
+                            ),
+                            child: Slider(
+                              value: selectedHeight,
+                              inactiveColor: sliderColorInactive,
+                              min: 120.0,
+                              max: 220.0,
+                              onChanged: (double newHeight) {
+                                setState(() {
+                                  selectedHeight = newHeight;
+                                });
+                              },
+                            ),
                           )
                         ],
                       ),
