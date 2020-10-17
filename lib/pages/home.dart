@@ -8,6 +8,40 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Color maleCardColor;
+  Color femaleCardColor;
+  Gender selectedGender;
+
+  @override
+  void initState() {
+    maleCardColorActivator(reusableCardColorInactive);
+    femaleCardColorActivator(reusableCardColorInactive);
+    super.initState();
+  }
+
+  void updateGender(Gender gender) {
+    selectedGender = gender;
+
+    switch (selectedGender) {
+      case Gender.male:
+        maleCardColorActivator(reusableCardColorActive);
+        femaleCardColorActivator(reusableCardColorInactive);
+        break;
+      case Gender.female:
+        maleCardColorActivator(reusableCardColorInactive);
+        femaleCardColorActivator(reusableCardColorActive);
+        break;
+    }
+  }
+
+  void maleCardColorActivator(Color color) {
+    maleCardColor = color;
+  }
+
+  void femaleCardColorActivator(Color color) {
+    femaleCardColor = color;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,20 +56,44 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableCard(
-                      color: reusableCardColor,
-                      child: IconContent(
-                        icon: FontAwesomeIcons.mars,
-                        label: 'MALE',
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateGender(Gender.male);
+                        });
+                      },
+                      onDoubleTap: () {
+                        setState(() {
+                          maleCardColor = reusableCardColorInactive;
+                        });
+                      },
+                      child: ReusableCard(
+                        color: maleCardColor,
+                        child: IconContent(
+                          icon: FontAwesomeIcons.mars,
+                          label: 'MALE',
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: ReusableCard(
-                      color: reusableCardColor,
-                      child: IconContent(
-                        icon: FontAwesomeIcons.venus,
-                        label: 'FEMALE',
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateGender(Gender.female);
+                        });
+                      },
+                      onDoubleTap: () {
+                        setState(() {
+                          femaleCardColor = reusableCardColorInactive;
+                        });
+                      },
+                      child: ReusableCard(
+                        color: femaleCardColor,
+                        child: IconContent(
+                          icon: FontAwesomeIcons.venus,
+                          label: 'FEMALE',
+                        ),
                       ),
                     ),
                   ),
@@ -80,6 +138,11 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+}
+
+enum Gender {
+  male,
+  female,
 }
 
 class IconContent extends StatelessWidget {
