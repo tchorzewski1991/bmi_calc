@@ -24,5 +24,15 @@ const Color sliderColor = Color(0xFFEB1555);
 const Color sliderColorActive = sliderColor;
 const Color sliderColorInactive = Color(0xFF8D8E98);
 
+// TextStyles
+const TextStyle labelTextStyle = TextStyle(
+  color: iconContentTextColor,
+  fontSize: 20.0,
+);
+const TextStyle numberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
+
 // Heights
 const double bottomContainerHeight = 80.0;

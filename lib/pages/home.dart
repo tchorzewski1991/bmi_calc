@@ -112,10 +112,7 @@ class _HomeState extends State<Home> {
                         children: [
                           Text(
                             'HEIGHT',
-                            style: TextStyle(
-                              color: iconContentTextColor,
-                              fontSize: 20.0,
-                            ),
+                            style: labelTextStyle,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -124,17 +121,12 @@ class _HomeState extends State<Home> {
                             children: [
                               Text(
                                 selectedHeight.round().toString(),
-                                style: TextStyle(
-                                  fontSize: 50.0,
-                                  fontWeight: FontWeight.w900,
-                                ),
+                                style: numberTextStyle,
                               ),
+                              SizedBox(width: 3.0),
                               Text(
                                 'cm',
-                                style: TextStyle(
-                                  color: iconContentTextColor,
-                                  fontSize: 20.0,
-                                ),
+                                style: labelTextStyle,
                               )
                             ],
                           ),
@@ -209,10 +201,7 @@ class IconContent extends StatelessWidget {
         SizedBox(height: 15.0),
         Text(
           label,
-          style: TextStyle(
-            color: iconContentTextColor,
-            fontSize: 20.0,
-          ),
+          style: labelTextStyle,
         )
       ],
     );
