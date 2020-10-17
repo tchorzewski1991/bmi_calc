@@ -19,5 +19,10 @@ const Color iconContentTextColor = Color(0xFF8D8E98);
 const Color iconContentTextColorInactive = iconContentTextColor;
 const Color iconContentTextColorActive = iconContentTextColor;
 
+// Colors - Slider
+const Color sliderColor = Color(0xFFEB1555);
+const Color sliderColorActive = sliderColor;
+const Color sliderColorInactive = Color(0xFF8D8E98);
+
 // Heights
 const double bottomContainerHeight = 80.0;

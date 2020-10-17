@@ -11,6 +11,7 @@ class _HomeState extends State<Home> {
   Color maleCardColor;
   Color femaleCardColor;
   Gender selectedGender;
+  double selectedHeight = 180.0;
 
   @override
   void initState() {
@@ -106,6 +107,38 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: ReusableCard(
                       color: reusableCardColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'HEIGHT',
+                            style: TextStyle(
+                              color: iconContentTextColor,
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          Text(
+                            selectedHeight.round().toString(),
+                            style: TextStyle(
+                              fontSize: 50.0,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          Slider(
+                            value: selectedHeight,
+                            activeColor: sliderColorActive,
+                            inactiveColor: sliderColorInactive,
+                            min: 120.0,
+                            max: 220.0,
+                            onChanged: (double newHeight) {
+                              setState(() {
+                                selectedHeight = newHeight;
+                              });
+                            },
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
