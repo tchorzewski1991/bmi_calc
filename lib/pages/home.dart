@@ -12,6 +12,8 @@ class _HomeState extends State<Home> {
   Color femaleCardColor;
   Gender selectedGender;
   double selectedHeight = 180.0;
+  int selectedWeight = 60;
+  int selectedAge = 25;
 
   @override
   void initState() {
@@ -114,6 +116,7 @@ class _HomeState extends State<Home> {
                             'HEIGHT',
                             style: labelTextStyle,
                           ),
+                          SizedBox(height: 10.0),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -123,7 +126,7 @@ class _HomeState extends State<Home> {
                                 selectedHeight.round().toString(),
                                 style: numberTextStyle,
                               ),
-                              SizedBox(width: 3.0),
+                              SizedBox(height: 10.0, width: 3.0),
                               Text(
                                 'cm',
                                 style: labelTextStyle,
@@ -167,11 +170,126 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: ReusableCard(
                       color: reusableCardColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'WEIGHT',
+                            style: labelTextStyle,
+                          ),
+                          SizedBox(height: 10.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                selectedWeight.toString(),
+                                style: numberTextStyle,
+                              ),
+                              SizedBox(height: 10.0, width: 3.0),
+                              Text(
+                                'kg',
+                                style: labelTextStyle,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RawMaterialButton(
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                                constraints: BoxConstraints.tightFor(
+                                  width: 40.0,
+                                  height: 40.0,
+                                ),
+                                child: Icon(Icons.add),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedWeight += 1;
+                                  });
+                                },
+                              ),
+                              RawMaterialButton(
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                                constraints: BoxConstraints.tightFor(
+                                  width: 40.0,
+                                  height: 40.0,
+                                ),
+                                child: Icon(Icons.remove),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedWeight -= 1;
+                                  });
+                                },
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
                       color: reusableCardColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'AGE',
+                            style: labelTextStyle,
+                          ),
+                          SizedBox(height: 10.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                selectedAge.toString(),
+                                style: numberTextStyle,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RawMaterialButton(
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                                constraints: BoxConstraints.tightFor(
+                                  width: 40.0,
+                                  height: 40.0,
+                                ),
+                                child: Icon(Icons.add),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedAge += 1;
+                                  });
+                                },
+                              ),
+                              RawMaterialButton(
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                                constraints: BoxConstraints.tightFor(
+                                  width: 40.0,
+                                  height: 40.0,
+                                ),
+                                child: Icon(Icons.remove),
+                                onPressed: () {
+                                  setState(() {
+                                    selectedAge -= 1;
+                                  });
+                                },
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
