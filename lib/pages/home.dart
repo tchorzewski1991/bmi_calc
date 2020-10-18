@@ -198,13 +198,7 @@ class _HomeState extends State<Home> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              RawMaterialButton(
-                                shape: CircleBorder(),
-                                fillColor: Color(0xFF4C4F5E),
-                                constraints: BoxConstraints.tightFor(
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                              ReusableButton(
                                 child: Icon(Icons.add),
                                 onPressed: () {
                                   setState(() {
@@ -212,20 +206,14 @@ class _HomeState extends State<Home> {
                                   });
                                 },
                               ),
-                              RawMaterialButton(
-                                shape: CircleBorder(),
-                                fillColor: Color(0xFF4C4F5E),
-                                constraints: BoxConstraints.tightFor(
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                              ReusableButton(
                                 child: Icon(Icons.remove),
                                 onPressed: () {
                                   setState(() {
                                     selectedWeight -= 1;
                                   });
                                 },
-                              )
+                              ),
                             ],
                           )
                         ],
@@ -258,13 +246,7 @@ class _HomeState extends State<Home> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              RawMaterialButton(
-                                shape: CircleBorder(),
-                                fillColor: Color(0xFF4C4F5E),
-                                constraints: BoxConstraints.tightFor(
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                              ReusableButton(
                                 child: Icon(Icons.add),
                                 onPressed: () {
                                   setState(() {
@@ -272,13 +254,7 @@ class _HomeState extends State<Home> {
                                   });
                                 },
                               ),
-                              RawMaterialButton(
-                                shape: CircleBorder(),
-                                fillColor: Color(0xFF4C4F5E),
-                                constraints: BoxConstraints.tightFor(
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                              ReusableButton(
                                 child: Icon(Icons.remove),
                                 onPressed: () {
                                   setState(() {
@@ -353,6 +329,38 @@ class ReusableCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: child,
+    );
+  }
+}
+
+class ReusableButton extends StatelessWidget {
+  final Function onPressed;
+  final Widget child;
+  final double width;
+  final double height;
+  final ShapeBorder shapeBorder;
+  final Color fillColor;
+
+  const ReusableButton({
+    @required this.onPressed,
+    @required this.child,
+    this.width = 40.0,
+    this.height = 40.0,
+    this.shapeBorder = const CircleBorder(),
+    this.fillColor = const Color(0xFF4C4F5E),
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      shape: shapeBorder,
+      fillColor: fillColor,
+      constraints: BoxConstraints.tightFor(
+        width: 40.0,
+        height: 40.0,
+      ),
+      child: child,
+      onPressed: onPressed,
     );
   }
 }
