@@ -1,8 +1,10 @@
-import 'package:bmi_calc/consts.dart';
-import 'package:bmi_calc/models/reusable_button.dart';
-import 'package:bmi_calc/models/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:bmi_calc/consts.dart';
+import 'package:bmi_calc/models/icon_content.dart';
+import 'package:bmi_calc/models/reusable_button.dart';
+import 'package:bmi_calc/models/reusable_card.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -303,29 +305,4 @@ class _HomeState extends State<Home> {
 enum Gender {
   male,
   female,
-}
-
-class IconContent extends StatelessWidget {
-  final IconData icon;
-  final String label;
-
-  IconContent({
-    @required this.icon,
-    @required this.label,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 80.0),
-        SizedBox(height: 15.0),
-        Text(
-          label,
-          style: labelTextStyle,
-        )
-      ],
-    );
-  }
 }
