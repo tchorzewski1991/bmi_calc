@@ -273,11 +273,25 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: bottomContainerHeight,
-              color: bottomContainerColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed('/result');
+              },
+              child: Container(
+                child: Center(
+                  child: Text(
+                    'CALCULATE',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                margin: EdgeInsets.only(top: 10.0),
+                width: double.infinity,
+                height: bottomContainerHeight,
+                color: bottomContainerColor,
+              ),
             ),
           ],
         ),
