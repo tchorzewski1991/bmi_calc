@@ -5,6 +5,7 @@ import 'package:bmi_calc/consts.dart';
 import 'package:bmi_calc/components/icon_content.dart';
 import 'package:bmi_calc/components/reusable_button.dart';
 import 'package:bmi_calc/components/reusable_card.dart';
+import 'package:bmi_calc/components/bottom_button.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -275,25 +276,11 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomButton(
+              title: 'CALCULATE',
               onTap: () {
                 Navigator.of(context).pushNamed('/result');
               },
-              child: Container(
-                child: Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                margin: EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                height: bottomContainerHeight,
-                color: bottomContainerColor,
-              ),
             ),
           ],
         ),
