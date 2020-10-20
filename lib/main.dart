@@ -1,3 +1,4 @@
+import 'package:bmi_calc/pages/result.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calc/pages/home.dart';
 import 'consts.dart';
@@ -15,7 +16,11 @@ class App extends StatelessWidget {
         appBarTheme: AppBarTheme(color: appBarColor),
       ),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/result': (context) => Result(),
+      },
     );
   }
 }
