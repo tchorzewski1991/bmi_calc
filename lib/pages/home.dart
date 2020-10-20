@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:bmi_calc/consts.dart';
-import 'package:bmi_calc/models/icon_content.dart';
-import 'package:bmi_calc/models/reusable_button.dart';
-import 'package:bmi_calc/models/reusable_card.dart';
+import 'package:bmi_calc/components/icon_content.dart';
+import 'package:bmi_calc/components/reusable_button.dart';
+import 'package:bmi_calc/components/reusable_card.dart';
 
 class Home extends StatefulWidget {
   @override
