@@ -5,6 +5,16 @@ import 'package:bmi_calc/components/reusable_card.dart';
 import 'package:bmi_calc/consts.dart';
 
 class Result extends StatelessWidget {
+  final String verdict;
+  final String score;
+  final String interpretation;
+
+  Result({
+    @required this.verdict,
+    @required this.score,
+    @required this.interpretation,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +47,7 @@ class Result extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Overweight',
+                    verdict,
                     style: TextStyle(
                       color: Color(0xFF24D876),
                       fontSize: 25.0,
@@ -45,7 +55,7 @@ class Result extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '18.3',
+                    score,
                     style: TextStyle(
                       fontSize: 100.0,
                       fontWeight: FontWeight.w600,
@@ -54,7 +64,7 @@ class Result extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      'It could be better. You should eat a little bit more.',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 25.0,

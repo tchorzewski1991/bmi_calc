@@ -6,6 +6,8 @@ import 'package:bmi_calc/components/icon_content.dart';
 import 'package:bmi_calc/components/reusable_button.dart';
 import 'package:bmi_calc/components/reusable_card.dart';
 import 'package:bmi_calc/components/bottom_button.dart';
+import 'package:bmi_calc/bmi_calculator.dart';
+import 'package:bmi_calc/pages/result.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -279,7 +281,24 @@ class _HomeState extends State<Home> {
             BottomButton(
               title: 'CALCULATE',
               onTap: () {
-                Navigator.of(context).pushNamed('/result');
+                BMICalculator calculator = BMICalculator(
+                  weight: selectedWeight,
+                  height: selectedHeight,
+                  age: selectedAge,
+                );
+
+                calculator.calculateResult();
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Result(
+                      verdict: calculator.getVerdict(),
+                      score: calculator.getScore(),
+                      interpretation: calculator.getInterpretation(),
+                    ),
+                  ),
+                );
               },
             ),
           ],
